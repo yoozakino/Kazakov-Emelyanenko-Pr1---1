@@ -15,28 +15,13 @@ using System.Windows.Shapes;
 
 namespace Практическая_работа_1_часть_1
 {
-    
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-
-        private void radio1_checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void radio2_checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void radio3_checked(object sender, RoutedEventArgs e)
-        {
-
+            this.Closing += MainWindow_Closing;
         }
 
         public void calculate_click(object sender, RoutedEventArgs e)
@@ -139,12 +124,12 @@ namespace Практическая_работа_1_часть_1
             }
 
 
-            
 
-            
+
+
         }
 
-        public void clear_click(object sender, RoutedEventArgs e)
+        private void clear_click(object sender, RoutedEventArgs e)
         {
             forx.Text = "";
             fory.Text = "";
@@ -153,6 +138,18 @@ namespace Практическая_работа_1_часть_1
             Radio1.IsChecked = false;
             Radio2.IsChecked = false;
             Radio3.IsChecked = false;
+        }
+
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Отображаем MessageBox с вопросом
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите закрыть окно?", "Подтверждение закрытия", MessageBoxButton.YesNo);
+
+            // Если пользователь выбрал "Нет", отменяем закрытие окна
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

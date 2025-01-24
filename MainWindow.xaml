@@ -5,26 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Практическая_работа_1_часть_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="600" Background="#FFD3D3D3" ResizeMode="NoResize">
+        Title="Найти значение функции" Height="550" Width="600" Background="#FFD3D3D3" ResizeMode="NoResize">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="100" Margin="177,47,0,0" VerticalAlignment="Top" Width="261"/>
-        <Image Margin="70,47,70,361" Source="/Image1.png" Stretch="Fill"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image ToolTip="Исходная функция" HorizontalAlignment="Left" Height="100" Margin="177,47,0,0" VerticalAlignment="Top" Width="261"/>
+        <Image Margin="70,47,62,361" Source="/Image1.png" Stretch="Fill"/>
         <Label Content="X" HorizontalAlignment="Left" Margin="36,209,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Bahnschrift SemiCondensed" RenderTransformOrigin="0.582,-0.822"/>
         <Label Content="Y" HorizontalAlignment="Left" Margin="36,285,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Bahnschrift SemiCindensed" RenderTransformOrigin="0.62,1.896"/>
-        <TextBox Name="forx" HorizontalAlignment="Left" Margin="105,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed"/>
-        <TextBox Name="fory" HorizontalAlignment="Left" Margin="105,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed"/>
-        <TextBox Name="answer" HorizontalAlignment="Left" Margin="105,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed" IsReadOnly="True"/>
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,343,0,0" Height="107" Width="77">
-            
-            <RadioButton Name="Radio1" Content="Sh(x)" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5" Checked="radio1_checked" />
+        <TextBox Name="forx" ToolTip="Ввод значения X" HorizontalAlignment="Left" Margin="105,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed"/>
+        <TextBox Name="fory" ToolTip="Ввод значения Y" HorizontalAlignment="Left" Margin="105,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed"/>
+        <TextBox Name="answer" ToolTip="Поле ответа" HorizontalAlignment="Left" Margin="105,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="38" FontSize="25" FontFamily="Bahnschrift SemiCondensed" IsReadOnly="True"/>
+        <StackPanel ToolTip="Функции для поиска значения" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,343,0,0" Height="107" Width="77">
 
-            <RadioButton Name="Radio2" Content="X^2" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5" Checked="radio2_checked" />
+            <RadioButton Name="Radio1" Content="Sh(x)" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5"/>
 
-            <RadioButton Name="Radio3" Content="E^x" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5" Height="45" RenderTransformOrigin="0.549,0.832" Checked="radio3_checked" />
+            <RadioButton Name="Radio2" Content="X^2" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5"/>
+
+            <RadioButton Name="Radio3" Content="E^x" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Margin="0,5" Height="45" RenderTransformOrigin="0.549,0.832"/>
         </StackPanel>
         <Label Content="Ответ" HorizontalAlignment="Left" Margin="14,471,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Bahnschrift SemiCondensed"/>
-        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="361,0,0,0" VerticalAlignment="Center" Height="84" Width="128" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Click="calculate_click"/>
-        <Button Content="Очистить" HorizontalAlignment="Left" Margin="361,359,0,0" VerticalAlignment="Top" Height="86" Width="128" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Click="clear_click"/>
+        <Button ToolTip="Вычисление с выбранными параметрами" Content="Вычислить" HorizontalAlignment="Left" Margin="361,0,0,0" VerticalAlignment="Center" Height="84" Width="128" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Click="calculate_click"/>
+        <Button ToolTip="Очистка всех полей" Content="Очистить" HorizontalAlignment="Left" Margin="361,359,0,0" VerticalAlignment="Top" Height="86" Width="128" FontSize="23" FontFamily="Bahnschrift SemiCondensed" Click="clear_click"/>
 
 
 
